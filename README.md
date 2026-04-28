@@ -1,9 +1,22 @@
-# Deterministic Decision Tree – Assignment
+# Deterministic Reflection Tree
 
-## Overview
-This project is a simple deterministic decision tree for daily reflection.  
-It asks Yes/No questions and gives a fixed reflection message.
+A deterministic reflection tree guiding agency, contribution, and perspective.
 
-## How to Run
-```bash
-python deterministic_decision_tree.py
+---
+
+## 📌 Overview
+This project implements a deterministic decision tree that guides reflections across three axes:
+- **Agency** (internal vs external control)
+- **Contribution** (individual vs collective effort)
+- **Perspective** (personal vs external viewpoint)
+
+The program prompts the user with structured yes/no questions and generates a summary reflection at the end.
+
+---
+
+## ⚙️ How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AmritaJadhav/decision_tree_assignment.git
+   cd decision_tree_assignment
+
