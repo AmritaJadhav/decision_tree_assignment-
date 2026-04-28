@@ -1,0 +1,129 @@
+{
+    "nodes": [
+      {
+        "id": "START",
+        "type": "start",
+        "text": "Welcome to your reflection session.",
+        "target": "A1_OPEN"
+      },
+      {
+        "id": "A1_OPEN",
+        "type": "question",
+        "text": "Did you feel more like a victim or a victor today?",
+        "options": ["Victim", "Victor"],
+        "target": "A1_DECISION"
+      },
+      {
+        "id": "A1_DECISION",
+        "type": "decision",
+        "rules": {
+          "Victim": "A1_R_VICTIM",
+          "Victor": "A1_R_VICTOR"
+        }
+      },
+      {
+        "id": "A1_R_VICTIM",
+        "type": "reflection",
+        "text": "You leaned toward seeing yourself as a victim.",
+        "signal": "axis1:internal",
+        "target": "A1_R_PLAN"
+      },
+      {
+        "id": "A1_R_VICTOR",
+        "type": "reflection",
+        "text": "You leaned toward seeing yourself as a victor.",
+        "signal": "axis1:external",
+        "target": "A1_R_PLAN"
+      },
+      {
+        "id": "A1_R_PLAN",
+        "type": "reflection",
+        "text": "Plan how to improve tomorrow.",
+        "signal": "axis1:external",
+        "target": "BRIDGE_1_2"
+      },
+      {
+        "id": "BRIDGE_1_2",
+        "type": "bridge",
+        "text": "Now let’s shift from how you handled things — to what you gave.",
+        "target": "A2_OPEN"
+      },
+      {
+        "id": "A2_OPEN",
+        "type": "question",
+        "text": "Think about one interaction you had today. Was it more about entitlement or contribution?",
+        "options": ["Entitlement", "Contribution"],
+        "target": "A2_DECISION"
+      },
+      {
+        "id": "A2_DECISION",
+        "type": "decision",
+        "rules": {
+          "Entitlement": "A2_R_ENTITLEMENT",
+          "Contribution": "A2_R_CONTRIBUTION"
+        }
+      },
+      {
+        "id": "A2_R_ENTITLEMENT",
+        "type": "reflection",
+        "text": "You leaned toward entitlement in your interactions.",
+        "signal": "axis2:internal",
+        "target": "BRIDGE_2_3"
+      },
+      {
+        "id": "A2_R_CONTRIBUTION",
+        "type": "reflection",
+        "text": "You leaned toward contribution in your interactions.",
+        "signal": "axis2:external",
+        "target": "BRIDGE_2_3"
+      },
+      {
+        "id": "BRIDGE_2_3",
+        "type": "bridge",
+        "text": "Finally, let’s reflect on perspective — self vs. others.",
+        "target": "A3_OPEN"
+      },
+      {
+        "id": "A3_OPEN",
+        "type": "question",
+        "text": "Were you more focused on yourself or on others today?",
+        "options": ["Self", "Others"],
+        "target": "A3_DECISION"
+      },
+      {
+        "id": "A3_DECISION",
+        "type": "decision",
+        "rules": {
+          "Self": "A3_R_SELF",
+          "Others": "A3_R_OTHERS"
+        }
+      },
+      {
+        "id": "A3_R_SELF",
+        "type": "reflection",
+        "text": "You leaned toward focusing on yourself.",
+        "signal": "axis3:internal",
+        "target": "SUMMARY"
+      },
+      {
+        "id": "A3_R_OTHERS",
+        "type": "reflection",
+        "text": "You leaned toward focusing on others.",
+        "signal": "axis3:external",
+        "target": "SUMMARY"
+      },
+      {
+        "id": "SUMMARY",
+        "type": "summary",
+        "text": "Today you leaned {axis1} on agency, {axis2} on contribution, and {axis3} on perspective.",
+        "target": "END"
+      }
+      ,
+      {
+        "id": "END",
+        "type": "end",
+        "text": "See you tomorrow."
+      }
+    ]
+  }
+  
